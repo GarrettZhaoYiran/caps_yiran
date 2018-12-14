@@ -5,13 +5,7 @@
 
 
 
-<html>
-<head>
-</head>
-<body>
 
-	<a href="${pageContext.request.contextPath}/admin/lecturer/create">Add
-		Course to change</a>
 	<div class="container">
 		<div class="row" style="color: black;">
 			<div class="col-xs-12">
@@ -23,7 +17,7 @@
 				<c:if test="${fn:length(lecturers) gt 0}">
 				
 						<table class="table table-striped table-bordered"
-							style="width: 100%" id="courseDetails">
+							style="width: 100%" id="lectures">
 							<thead>
 								<tr>
 									<td>LecturerID</td>
@@ -51,46 +45,15 @@
 
 
 									</tr>
-									<%-- 			<td>
-				<button onclick = "window.location = '${pageContext.request.contextPath}/admin/course/students/${Course.courseIndex}.html'">view course</button>
-				</td>
-				</tr> --%>
+
 								</c:forEach>
 							</tbody>
-							<%-- 		<table class="cell-border" style="width: 100%" id="courseDetails">
-		<tr>
-				<td>Lastname</td>
-				<td>Firstname</td>
-				<td>Phone</td>
-				<td>Email</td>
-		</tr>
-		<c:forEach var="u" items="${User}" varStatus="status">
-			<tr class="${status.index%2==0?'even':'odd'}">
-				<tr>
-				<td>${u.firstMidName}</td>
-				<td>${u.lastName}</td>
-				<td>${u.phone}</td>
-				<td>${u.email}</td>
-				</tr>
-			 	<td align="center"><a href="${pageContext.request.contextPath}/admin/lecturer/edit/${lecturer_LecturerID}.html">
-						<s:message code="edit" />
-				</a></td>
-				<td><a
-					href="${pageContext.request.contextPath}/admin/course/delete/${lecturer_LecturerID}.html">
-						<s:message code="delete" /> 
-				</a></td>
-				<td>
-				<button onclick = "window.location = '${pageContext.request.contextPath}/admin/course/students/${Course.courseIndex}.html'">view course</button>
-				</td>
-				</tr>
-		</c:forEach> --%>
 
 						</table>
 						</c:if>
 					</div>
 					
-			</div>
-			
+			</div>		
 		</div>
 
 	<script
@@ -101,10 +64,8 @@
 
 	<script>
 		$(document).ready(function() {
-			$('#selectedCourseView').DataTable();
+			$('#lectures').DataTable();
 		});
 	</script>
 
 
-</body>
-</html>
